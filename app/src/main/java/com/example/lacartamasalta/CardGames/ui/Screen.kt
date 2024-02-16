@@ -22,7 +22,7 @@ import com.example.lacartamasalta.R
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
-
+@Composable
 fun Principal(viewModel: ScreenViewModel) {
     val idCarta1: Int by viewModel.idCarta1.observeAsState(initial = R.drawable.bocaabajo)
     val idCarta2: Int by viewModel.idCarta2.observeAsState(initial = R.drawable.bocaabajo)
