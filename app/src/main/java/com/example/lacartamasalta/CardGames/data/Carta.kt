@@ -4,6 +4,6 @@ import androidx.annotation.DrawableRes
 data class Carta(
     var palo: Palos,
     var nombre:Naipes,
-    var puntos:Float,
+    var puntos:Int,
     @DrawableRes var id:Int
 )

@@ -15,15 +15,12 @@ class Baraja {
          */
         fun NuevaBaraja(context: Context){
             mazo.clear()
-            var puntos:Float
+            var puntos:Int
             for (palo in 1..4){
                 for (cont in 1..10){
                     when(cont){
-                        8,9,10-> {
-                            puntos = 0.5F
-                        }
                         else->{
-                            puntos = cont.toFloat()
+                            puntos = cont
                         }
                     }
                     mazo.add(
@@ -49,7 +46,7 @@ class Baraja {
          */
         fun darCarta():Carta{
             if (mazo.isEmpty()){
-                return (Carta(Palos.PORTADA,Naipes.PORTADA,0F, R.drawable.bocaabajo))
+                return (Carta(Palos.PORTADA,Naipes.PORTADA,0, R.drawable.bocaabajo))
             }else{
                 return mazo.removeAt(mazo.size-1)
             }
