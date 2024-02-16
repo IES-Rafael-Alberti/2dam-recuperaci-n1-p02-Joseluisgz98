@@ -16,8 +16,8 @@ class Baraja {
         fun NuevaBaraja(context: Context){
             mazo.clear()
             var puntos:Int
-            for (palo in 1..4){
-                for (cont in 1..10){
+            for (palo in 0..3){
+                for (cont in 0..9){
                     when(cont){
                         else->{
                             puntos = cont
