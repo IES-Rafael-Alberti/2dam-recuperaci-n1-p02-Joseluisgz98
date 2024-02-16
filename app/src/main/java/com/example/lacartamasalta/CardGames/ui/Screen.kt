@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import com.example.lacartamasalta.R
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 
 @Composable
 fun Principal(viewModel: ScreenViewModel) {
