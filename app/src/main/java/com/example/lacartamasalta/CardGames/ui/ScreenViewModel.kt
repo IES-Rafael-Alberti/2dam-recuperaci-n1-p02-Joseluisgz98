@@ -27,6 +27,7 @@ class ScreenViewModel(application: Application): AndroidViewModel(application) {
     var carta2 = MutableLiveData<Carta>()
 
     init {
+
         reiniciar(context)
     }
     fun reiniciar(context: Context){
@@ -35,12 +36,11 @@ class ScreenViewModel(application: Application): AndroidViewModel(application) {
         Baraja.NuevaBaraja(context)
         Baraja.barajar()
     }
-    fun darCartas(){
+    fun darCartas1(){
         carta1.value = Baraja.darCarta()
         _idCarta1.value = carta1.value?.id
         carta2.value = Baraja.darCarta()
         _idCarta2.value = carta2.value?.id
-        comprobarGanador()
     }
     fun comprobarGanador(){
         val puntosJugador1 = carta1.value?.puntos ?: 0
@@ -51,7 +51,7 @@ class ScreenViewModel(application: Application): AndroidViewModel(application) {
         } else if (puntosJugador1 < puntosJugador2) {
             ganador.value = 2
         } else {
-            ganador.value = null
+            ganador.value = "Empate"
         }
     }
 }
