@@ -87,7 +87,7 @@ fun Principal(viewModel: ScreenViewModel) {
             Button(onClick = { viewModel.reiniciar(viewModel.context) }, Modifier.padding(10.dp)) {
                 Text(text = "Reiniciar")
             }
-            Button(onClick = { viewModel.darCartas1() }, Modifier.padding(10.dp)) {
+            Button(onClick = { viewModel.pedirCarta() }, Modifier.padding(10.dp)) {
                 Text(text = "Dar Carta")
             }
         }

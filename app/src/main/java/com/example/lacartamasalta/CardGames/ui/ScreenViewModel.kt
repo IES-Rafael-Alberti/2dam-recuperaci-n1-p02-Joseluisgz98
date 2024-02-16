@@ -35,7 +35,7 @@ class ScreenViewModel(application: Application): AndroidViewModel(application) {
         Baraja.NuevaBaraja(context)
         Baraja.barajar()
     }
-    fun darCartas1(){
+    fun pedirCarta(){
         carta1.value = Baraja.darCarta()
         _idCarta1.value = carta1.value?.id
         carta2.value = Baraja.darCarta()
