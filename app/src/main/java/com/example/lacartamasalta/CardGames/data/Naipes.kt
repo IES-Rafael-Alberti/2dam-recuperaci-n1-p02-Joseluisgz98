@@ -10,5 +10,6 @@ enum class Naipes {
     SIETE,
     SOTA,
     CABALLO,
-    REY
+    REY,
+    PORTADA
 }

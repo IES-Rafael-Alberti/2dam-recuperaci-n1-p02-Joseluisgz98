@@ -4,5 +4,6 @@ enum class Palos {
     O,//OROS
     B,//BASTOS
     E,//ESPADAS
-    C//COPAS
+    C,//COPAS
+    PORTADA
 }
