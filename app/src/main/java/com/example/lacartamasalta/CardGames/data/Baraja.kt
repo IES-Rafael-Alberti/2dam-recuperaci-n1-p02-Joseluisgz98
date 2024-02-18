@@ -17,8 +17,17 @@ class Baraja {
             mazo.clear()
             var puntos:Int
             for (palo in 0..3){
-                for (cont in 0..9){
+                for (cont in 1..10){
                     when(cont){
+                        8->{
+                            puntos=10
+                        }
+                        9->{
+                            puntos=11
+                        }
+                        10->{
+                            puntos=12
+                        }
                         else->{
                             puntos = cont
                         }
@@ -38,13 +47,13 @@ class Baraja {
         }
 
         /**
-         * el error que te comente por el correo de que en ocasiones petaba es a raiz de que en ocasiones no encuentra la carta y nose porq
-         * pero si encuentra el valor lo que no llega a encontrar es la carta drawble y nose a que es debido dicho error
+         * Funcion que te da el id del la carta
          */
-        private fun getIdDrawable(context: Context, nombreCarta: String): Int {
-            val id = context.resources.getIdentifier(nombreCarta, "drawable", context.packageName)
-            return if (id == 0) R.drawable.bocaabajo else id
-        }
+        private fun getIdDrawable(context: Context, nombreCarta: String) =
+            context.resources.getIdentifier(
+                nombreCarta,
+                "drawable",
+                context.packageName)
         /**
          * funcuion la cual te da una carta y si esta vacia te da una carta boca abajo
          */
@@ -62,6 +71,5 @@ class Baraja {
         fun barajar() {
             mazo.shuffle()
         }
-
     }
 }
