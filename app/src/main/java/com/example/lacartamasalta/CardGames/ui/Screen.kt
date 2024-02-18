@@ -23,11 +23,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun Principal(viewModel: ScreenViewModel) {
     val idCarta1: Int by viewModel.idCarta1.observeAsState(initial = R.drawable.bocaabajo)
     val idCarta2: Int by viewModel.idCarta2.observeAsState(initial = R.drawable.bocaabajo)
+    val ganador: Int? by viewModel.ganador.observeAsState() // Observe ganador
 
     Column(
         modifier = Modifier
@@ -44,7 +46,6 @@ fun Principal(viewModel: ScreenViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(text ="Jugador 1", color = Color.Black)
-
             Card(
                 modifier = Modifier
                     .width(150.dp)
@@ -84,13 +85,18 @@ fun Principal(viewModel: ScreenViewModel) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.Center
         ) {
-            Button(onClick = { viewModel.reiniciar(viewModel.context) }, Modifier.padding(10.dp)) {
+            Button(onClick = { viewModel.reiniciar() }, Modifier.padding(10.dp)) {
                 Text(text = "Reiniciar")
             }
             Button(onClick = { viewModel.pedirCarta() }, Modifier.padding(10.dp)) {
                 Text(text = "Dar Carta")
             }
         }
+        //Esta línea comprueba si la variable ganador es null. Si no es null, se ejecuta el bloque de código dentro de las llaves.
+        ganador?.let {
+            Text(text = "Ganador: Jugador $it", color = Color.Red, fontSize = 20.sp)
+        }
     }
 }
+
 

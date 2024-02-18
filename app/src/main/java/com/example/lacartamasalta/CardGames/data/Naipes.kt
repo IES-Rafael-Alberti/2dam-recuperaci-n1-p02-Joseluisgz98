@@ -1,5 +1,5 @@
 package com.example.lacartamasalta.CardGames.data
-
+//Clase enumedara la cual dice los naipes de las cartas
 enum class Naipes {
     UNO,
     DOS,
