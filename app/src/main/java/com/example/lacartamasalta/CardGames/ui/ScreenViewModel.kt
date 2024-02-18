@@ -30,6 +30,9 @@ class ScreenViewModel(application: Application) : AndroidViewModel(application) 
         reiniciar()
     }
 
+    /**
+     * Funcion la cual reinicia la partida
+     */
     fun reiniciar() {
         _idCarta1.value = R.drawable.bocaabajo
         _idCarta2.value = R.drawable.bocaabajo
@@ -37,6 +40,9 @@ class ScreenViewModel(application: Application) : AndroidViewModel(application) 
         Baraja.barajar()
     }
 
+    /**
+     * Funcion que da carta a ambos jugadores
+     */
     fun pedirCarta() {
         _carta1.value = Baraja.darCarta()
         _idCarta1.value = _carta1.value?.id
@@ -45,6 +51,9 @@ class ScreenViewModel(application: Application) : AndroidViewModel(application) 
         comprobarGanador()
     }
 
+    /**
+     * Funcion para comprobar quien es el ganador
+     */
     private fun comprobarGanador() {
         val puntosJugador1 = _carta1.value?.puntos ?: 0
         val puntosJugador2 = _carta2.value?.puntos ?: 0
